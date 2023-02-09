@@ -51,12 +51,12 @@ xpos = 300
 ypos = 180
 num_sides = [3, 4, 6, 20, 100, 360]
 
-for _ in num_sides:
+for side in num_sides:
     window.fill("purple")
     pygame.display.flip()
     pygame.time.wait(1000)
-    for i in range(_):
-        angle = 360 / _
+    for i in range(side):
+        angle = 360 / side
         radians = math.radians(angle * i)
         x = xpos + side_length * math.cos(radians)
         y = ypos + side_length * math.sin(radians)
@@ -64,5 +64,5 @@ for _ in num_sides:
     pygame.display.flip()
     pygame.draw.polygon(window, "orchid", points, width=0)
     pygame.display.flip()
-    pygame.time.wait(1500)
+    pygame.time.wait(1000)
     points = []
