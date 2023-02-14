@@ -1,5 +1,5 @@
-import math
-import turtle  # 1.  import the modules
+# import math
+# import turtle  # 1.  import the modules
 
 # # simulate pen and paper
 # pen = turtle.Turtle()
@@ -65,19 +65,71 @@ import turtle  # 1.  import the modules
 # window.exitonclick()
 
 
-wn = turtle.Screen()  # 2.  Create a screen
-wn.bgcolor("green")
-donatello = turtle.Turtle()  # 3.  Create two turtles
-donatello.shape("turtle")
+# wn = turtle.Screen()  # 2.  Create a screen
+# wn.bgcolor("green")
+# donatello = turtle.Turtle()  # 3.  Create two turtles
+# donatello.shape("turtle")
 
-colors = ["red", "purple", "yellow"]
-for color in colors:
-    donatello.color(color)
-    for _ in range(4):
-        donatello.left(90)
-        donatello.forward(50)
-    donatello.up()
-    donatello.forward(100)
-    donatello.down()
+# colors = ["red", "purple", "yellow"]
+# for color in colors:
+#     donatello.color(color)
+#     for _ in range(4):
+#         donatello.left(90)
+#         donatello.forward(50)
+#     donatello.up()
+#     donatello.forward(100)
+#     donatello.down()
 
-wn.exitonclick()
+# wn.exitonclick()
+
+## Pygame
+# framework
+
+# =========================
+# TOP OF THE FILE
+# import pygame
+
+# pygame.init()
+
+# screen = pygame.display.set_mode()
+
+# screen: variable
+# pygame: modules that contain modules are called frameworks
+# display: submodile of pygame
+# set_mode: function of the display submodule
+
+
+# screen.fill("red")
+# pygame.display.flip()
+# pygame.time.wait(1000)
+# screen.fill("blue")
+# pygame.display.flip()
+# pygame.time.wait(1000)
+
+# TOP OF THE FILE
+import pygame
+
+pygame.init()
+
+
+while 1:
+    pygame.event.get()
+
+    screen.fill("green")
+    pygame.display.flip()
+    pygame.time.wait(1000)
+
+    screen_size = screen.get_size()
+
+    # [x, y, width, height]
+    dimensions = [screen_size[0] / 2, screen_size[1] / 2, 250, 250]
+    pygame.draw.rect(screen, "red", dimensions)
+
+    # [x, y, width, height]
+    dimensions = [300, 300, 250, 250]
+    pygame.draw.rect(screen, "blue", dimensions)
+
+    pygame.display.flip()
+    input()
+
+    break
